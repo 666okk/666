@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Weather App</h1>
+            <input type="text" id="cityInput" placeholder="Search for a city">
+            <button id="searchBtn">Search</button>
+            <button id="locationBtn">Use My Location</button>
+            <button id="favoriteBtn">Add to Favorites</button>
+            <select id="unitSelect">
+                <option value="metric">Celsius (°C)</option>
+                <option value="imperial">Fahrenheit (°F)</option>
+                <option value="kelvin">Kelvin (K)</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <section id="currentWeather">
+            <h2 id="cityName"></h2>
+            <div class="weather-info">
+                <img id="weatherIcon" alt="Weather Icon">
+                <p id="temperature"></p>
+                <p id="description"></p>
+                <p id="feelsLike"></p>
+                <p id="humidity"></p>
+                <p id="windSpeed"></p>
+            </div>
+        </section>
+
+        <section id="mapContainer">
+            <h3>Click on the map to get weather information</h3>
+            <div id="map" style="height: 400px; width: 100%;"></div>
+        </section>
+
+        <section id="hourlyForecast">
+            <h3>24-Hour Forecast</h3>
+            <div id="hourlyForecastDetails"></div>
+        </section>
+
+        <section id="dailyForecast">
+            <h3>7-Day Forecast</h3>
+            <div id="dailyForecastDetails"></div>
+        </section>
+
+        <section id="chartContainer">
+            <h3>Temperature Comparison (Next 24 Hours)</h3>
+            <canvas id="forecastChart" width="400" height="200"></canvas>
+        </section>
+
+        <section id="favoritesSection">
+            <h3>Favorites</h3>
+            <ul id="favoritesList"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Weather App © 2024</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
